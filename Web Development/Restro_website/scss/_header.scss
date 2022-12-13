@@ -1,0 +1,99 @@
+@import "global";
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    box-shadow: $box-shadow;
+    @include mx-w991{
+        padding: 1rem 2rem;  
+    }
+
+    .logo {
+        color: $black;
+        font-size: 2.5rem;
+        font-weight: bolder;
+
+        i {
+            color: $green;
+        }
+    }
+
+    .navbar {
+        &.active{
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        }
+        @include mx-w768{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background:  #fff;
+            border-top: .1rem solid rgba($color: #000000, $alpha: .2);
+            border-bottom: .1rem solid rgba($color: #000000, $alpha: .2);
+            padding: 1rem;
+            z-index: 1004;
+            clip-path: polygon(0 0,100% 0,100% 0,0 0);
+            
+        }
+        
+        a {
+            font-size: 1.7rem;
+            border-radius: .5rem;
+            padding: .5rem 1.5rem;
+            color: $gray;
+            
+            &.active,
+            &:hover {
+                color: #fff;
+                background: $green;
+                
+            }
+            @include mx-w768{
+                display: block;
+                padding: 1.5rem;
+                margin: 1rem;
+                font-size: 2rem;
+                background-color: #eee;
+            }
+        }
+        
+    }
+
+    .icons{
+        #menu-bars{
+            display: none;
+            @include mx-w768{
+                display: inline-block;
+            }
+        }
+        i,
+        a {
+            cursor: pointer;
+            margin-left: .5rem;
+            height: 4.5rem;
+            line-height: 4.5rem;
+            width: 4.5rem;
+            text-align: center;
+            font-size: 1.7rem;
+            color: $black;
+            border-radius: 50%;
+            background: #eee;
+            
+    
+            &:hover {
+                color: #fff;
+                background-color: $green;
+                transform: rotate(360deg);
+    
+            }
+        }
+
+    }  
+}
